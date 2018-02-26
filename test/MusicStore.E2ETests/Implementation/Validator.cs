@@ -110,8 +110,8 @@ namespace E2ETests
                 //Helpers.ThrowIfResponseStatusNotOk(runtimeResponse, _logger);
             }
 
-            //var runtimeInfo = await runtimeResponse.Content.ReadAsStringAsync();
-            //_logger.LogInformation(runtimeInfo);
+            // Verify the app is using precompiled views
+            Assert.Contains("MusicStore.Views, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", responseContent);
         }
 
         public async Task VerifyNtlmHomePage(HttpResponseMessage response)
